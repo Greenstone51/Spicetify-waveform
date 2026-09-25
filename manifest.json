@@ -1,6 +1,6 @@
 {
   "name": "Waveform",
-  "description": "Waveform seekbar generated from Spotify audio analysis API.",
+  "description": "Waveform seekbar generated safely using Spicetify internal audio analysis API.",
   "preview": "assets/waveform-preview.png",
   "main": "waveform.js",
   "readme": "README.md",
@@ -8,13 +8,17 @@
     {
       "name": "SPOTLAB",
       "url": "https://github.com/SPOTLAB-Live"
+    },
+    {
+      "name": "Greenstone51",
+      "url": "https://github.com/Greenstone51"
     }
   ],
   "tags": [
     "spicetify",
     "waveform",
     "wave",
-	"dj",
-	"soundcloud"
+    "dj",
+    "soundcloud"
   ]
 }
