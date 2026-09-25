@@ -1,14 +1,6 @@
 # Spicetify Waveform Seekbar
 
-> ⚠️ **DEPRECATED - NO LONGER MAINTAINED**
->
-> **As of January 2025, this extension is no longer functional or maintained.**
->
-> Due to [changes in the Spotify Web API](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api), the audio analysis endpoints required for this extension are no longer available. As a result, this extension cannot function as intended and will not be maintained further.
->
-> This repository has been archived for historical reference. No further updates or support will be provided.
->
-> Thank you to everyone who used and supported this project!
+Fixed and maintained by **Greenstone51** (Originally created by **SPOTLAB**).
 
 ---
 
@@ -18,7 +10,9 @@
 
 ## Description
 
-Waveform is a extension for Spicetify that replaces the default seekbar in the Spotify player with a dynamic waveform visualization. This extension fetches audio analysis data from Spotify's API and generates a visual representation of the track's waveform, similar to the SoundCloud player and basically all DJ software.
+Waveform is an extension for Spicetify that replaces the default seekbar in the Spotify player with a dynamic waveform visualization. This extension fetches audio analysis data using Spicetify internal client interfaces and generates a visual representation of the track's waveform, similar to SoundCloud and standard DJ software.
+
+Note: This version resolves previous deprecation issues with Spotify Web API endpoints by relying entirely on local, non-intrusive Spicetify internal APIs.
 
 ## Features
 
@@ -41,7 +35,7 @@ Waveform is a extension for Spicetify that replaces the default seekbar in the S
 4. Add the extension name to your Spicetify config: `spicetify config extensions waveform.js`
 5. Apply the changes: `spicetify apply`
 
-Or, you can simply install this extension from the Spicetify Marketplace.
+Alternatively, install this extension directly via the built-in Spicetify Marketplace tab.
 
 ## Usage
 
@@ -55,34 +49,27 @@ Once installed and enabled, the extension will automatically replace the default
 The extension includes several customizable parameters:
 
 - `DEBUG`: Set to `true` for verbose console logging.
-- `SIMULATE_API_ERROR`: Set to `true` to test error handling.
 - `contrastFactor`: Adjust to change the contrast of the waveform (default: 4.0).
-- `maxRetryAttempts`: Number of retry attempts for API calls (default: 3).
-- `retryDelay`: Delay between retry attempts in milliseconds (default: 2000).
 
 To customize these, edit the values in the `waveform.js` file.
 
 ## Compatibility
 
-This extension is designed to work with the latest version of Spicetify. It may require updates to maintain compatibility with future Spicetify or Spotify client updates.
+This extension is designed to work with the latest version of Spicetify. It uses internal client bindings to ensure continuous functionality regardless of external Web API policy changes.
 
 ## Known Issues
 
-- The extension may not work if Spotify's audio analysis API changes or becomes unavailable.
-- Some tracks may not have audio analysis data available, in which case the original seekbar will be used.
-- This extension will likely not work with other extensions which also modify the seekbar.
-- If the player is paused and the waveform seekbar is clicked, the progress will not update until the track begins playing again.
-- Theme color changes may not apply while the track is paused. Playing the track will trigger the color updates.
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/SPOTLAB-Live/Spicetify-waveform/issues) if you want to contribute.
+- Some tracks may not have local audio analysis data available, in which case the original seekbar will be displayed.
+- This extension will likely not work alongside other extensions that directly manipulate the playback bar element.
+- If the player is paused and the waveform seekbar is clicked, the progress will not update until playback resumes.
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/SPOTLAB-Live/Spicetify-waveform/blob/main/LICENSE.md). Feel free to use, modify, and distribute the code as per the terms of this license.
+This project is licensed under the [MIT License](LICENSE.md). Feel free to use, modify, and distribute the code according to the license terms.
 
 ## Acknowledgements
 
-- Inspired by this wonderful [concept by Lee Martin.](https://medium.com/swlh/creating-waveforms-out-of-spotify-tracks-b22030dd442b)
-- Thanks to the Spicetify community for their tools and support.
+- Original implementation by [SPOTLAB](https://github.com/SPOTLAB-Live).
+- Maintained and fixed by [Greenstone51](https://github.com/Greenstone51).
+- Inspired by the concept by [Lee Martin](https://medium.com/swlh/creating-waveforms-out-of-spotify-tracks-b22030dd442b).
+- Thanks to the Spicetify community for ongoing support and tools.
